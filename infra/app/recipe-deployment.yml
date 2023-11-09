@@ -1,0 +1,119 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipe-front
+  namespace: recipe
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  selector:
+    matchLabels:
+      app: recipe-front
+  template:
+    metadata:
+      labels:
+        app: recipe-front
+        tier: frontend
+    spec:
+      containers:
+      - name: recipe-front
+        image: <ecr_dns>/ecr-front:<version>
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipe-member
+  namespace: recipe
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  selector:
+    matchLabels:
+      app: recipe-member
+  template:
+    metadata:
+      labels:
+        app: recipe-member
+        tier: backend
+    spec:
+      containers:
+      - name: recipe-member
+        image: <ecr_dns>/ecr-member:<version>
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 8081
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipe-notice
+  namespace: recipe
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  selector:
+    matchLabels:
+      app: recipe-notice
+  template:
+    metadata:
+      labels:
+        app: recipe-notice
+        tier: backend
+    spec:
+      containers:
+      - name: recipe-notice
+        image: <ecr_dns>/ecr-notice:<version>
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 8082
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipe-recommend
+  namespace: recipe
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  selector:
+    matchLabels:
+      app: recipe-recommend
+  template:
+    metadata:
+      labels:
+        app: recipe-recommend
+        tier: backend
+    spec:
+      containers:
+      - name: recipe-recommend
+        image: <ecr_dns>/ecr-recommend:<version>
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 8083

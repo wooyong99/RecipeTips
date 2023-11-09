@@ -1,0 +1,87 @@
+# front
+apiVersion: v1
+kind: Service
+metadata:
+  name: recipe-front
+  namespace: recipe
+spec:
+  selector:
+    app: recipe-front
+  type: ClusterIP
+#  sessionAffinity: None
+#  sessionAffinityConfig:
+#    clientIP:
+#      timeoutSeconds: 10800
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
+    # you can specify a value in the `spec.ports[*].nodePort` field.
+#    nodePort: 30001
+---
+# member
+apiVersion: v1
+kind: Service
+metadata:
+  name: recipe-member
+  namespace: recipe
+spec:
+  selector:
+    app: recipe-member
+  type: ClusterIP
+#  sessionAffinity: None
+#  sessionAffinityConfig:
+#    clientIP:
+#      timeoutSeconds: 10800
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8081
+    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
+    # you can specify a value in the `spec.ports[*].nodePort` field.
+#    nodePort: 30002
+---
+# notice
+apiVersion: v1
+kind: Service
+metadata:
+  name: recipe-notice
+  namespace: recipe
+spec:
+  selector:
+    app: recipe-notice
+  type: ClusterIP
+#  sessionAffinity: None
+#  sessionAffinityConfig:
+#    clientIP:
+#      timeoutSeconds: 10800
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8082
+    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
+    # you can specify a value in the `spec.ports[*].nodePort` field.
+#    nodePort: 30003
+---
+# recommend
+apiVersion: v1
+kind: Service
+metadata:
+  name: recipe-recommend
+  namespace: recipe
+spec:
+  selector:
+    app: recipe-recommend
+  type: ClusterIP
+#  sessionAffinity: None
+#  sessionAffinityConfig:
+#    clientIP:
+#      timeoutSeconds: 10800
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8083
+    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
+    # you can specify a value in the `spec.ports[*].nodePort` field.
+#    nodePort: 30004

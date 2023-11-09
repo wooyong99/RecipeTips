@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: monitoring-ingress
+  namespace: monitoring
+  annotations:
+    # kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTP": 9200}, {"HTTP": 9200}]'
+    alb.ingress.kubernetes.io/subnets: subnet-0e33010c5bd2192cb, subnet-0652eb8e506709a61
+    alb.ingress.kubernetes.io/security-groups: sg-078c2f3144099c9b8
+#    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:321148377199:certificate/48ccf78f-437d-44e9-b95d-4b594d3d3330
+    alb.ingress.kubernetes.io/group.name: admin-alb
+
+spec:
+  ingressClassName: alb
+  rules:
+    - host: kibana.recipetips.net
+      http:
+       paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: kibana-svc     #ALB 대상을 내 웹서비스로
+               port:
+                 number: 5601
+    - host: grafana.recipetips.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: grafana     #ALB 대상을 내 웹서비스로
+                port:
+                  number: 3000

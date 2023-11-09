@@ -1,0 +1,60 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: recipe-ingress
+  namespace: recipe
+  annotations:
+#    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/subnets: subnet-abcd1234, subnet-efgh5678
+    alb.ingress.kubernetes.io/security-groups: 	sg-abcd1234
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/certificate-arn: <certificate-arn>
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+
+spec:
+  ingressClassName: alb
+  rules:
+  - host: www.recipetips.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: recipe-front
+            port:
+              number: 80
+  - host: www.recipetips.net
+    http:
+      paths:
+      - path: /member
+        pathType: Prefix
+        backend:
+          service:
+            name: recipe-member
+            port:
+              number: 80
+  - host: www.recipetips.net
+    http:
+      paths:
+      - path: /notice
+        pathType: Prefix
+        backend:
+          service:
+            name: recipe-notice
+            port:
+              number: 80
+  - host: www.recipetips.net
+    http:
+      paths:
+      - path: /recommend
+        pathType: Prefix
+        backend:
+          service:
+            name: recipe-recommend
+            port:
+              number: 80

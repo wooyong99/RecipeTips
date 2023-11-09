@@ -1,0 +1,15 @@
+#!/bin/bash
+
+mkdir environment
+cd environment
+sudo curl -L https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.rpm -o jdk11.rpm
+sudo yum localinstall -y jdk11.rpm
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum install -y jenkins
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo sed -i 's/JENKINS_PORT=8080/JENKINS_PORT=8000/' /usr/lib/systemd/system/jenkins.service
+sudo systemctl restart jenkins
+
+sed -i 's|${ecr_url}:${build_number}|${new_tag_image}|g'
