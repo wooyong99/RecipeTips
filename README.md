@@ -1,0 +1,115 @@
+# 🍳 RecipeTips
+
+---
+
+'RecipeTips'는 요리에 대한 지식이 부족하거나 배우고 싶은 1인 가족 및 자취생들이 자유롭게 소통하고, 정보를 공유할 수 있는 사이트입니다.
+
+## 프로젝트 선정 배경
+
+---
+Pendemic 이후 외식이 어려워지고 집에서 요리하는 현상이 증가했습니다. 이에 따라 많은 사람들이 직접 요리를 하여 물가 부담을 낮추는 경향이 나타났습니다. 
+그러나 사람들은 어떠한 요리를 만들지, 어떻게 조리를 하는지에 대한 고민이 많아졌습니다. 따라서, 이러한 수요를 충족시키고 집에서 요리하는 사람들에게 도움을 주기 위해
+"RecipeTips"를 개발하기로 결정했습니다. RecipeTips는 다양한 요리 관련 정보를 제공하고 추천 요리, 조리 방법 등을 소개합니다. 
+
+## 프로젝트 목표
+
+---
+오늘날에는 시스템이 지속적으로 작동하고 사용 가능한 **고가용성**이 강조되고 있습니다. 이러한 고가용성을 위해서는 특정 서비스에 대한 **확장성과 장애 격리**를 고려하여 애플리케이션을 설계해야합니다.
+**컨테이너 기술**은 인프라 환경의 '멱등성'을 보장해 안정적인 환경을 제공하여 이식성과 유연성을 확보해줄 수 있습니다. 그리고 여러개의 컨테이너를 운영하기
+위해서는 **컨테이너 오케스트레이션 기술**을 활용하는 것이 좋습니다. 더불어, 빠르게 변화하는 환경에서 소프트웨어의 **지속적으로 통합 및 배포**를 통해 출시 리스타임을 단축하는 것도 중요한 요소입니다.
+
+따라서, 장애에 대해 대비가 가능하고 고가용성과 새로운 버전 업데이트 시 지속적으로 서비스가 가능한 무중단 배포가 가능한 애플리케이션을 개발할 것입니다.
+
+여러개의 컨테이너 형식으로 구성된 MSA 애플리케이션을 관리하기 위해 Kubernetes를 이용하여 인프라를 구축할 것입니다. 그리고 개발자들의 생산성을 높이고 개발 Process의 효율성을 극대화하기 위해 
+CI/CD 파이프라인을 구축하여 장애에 대해 대비가 가능하고  고가용성과 새로운 버전 업데이트 시 지속적으로 서비스가 가능한 무중단 배포를 목표로
+
+## 진행 기간
+
+---
+
+> 📆 **2023.09.27** ~ **2023.11.01**
+
+## 사용 기술
+
+---
+#### Infra
+<img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=flat-logo&logo=amazonaws&logoColor=white"> <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=Kubernetes&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white"/> <img src="https://img.shields.io/badge/Terraform-844FBA?style=flat&logo=Terraform&logoColor=white"/> 
+
+#### CI/CD
+<img src="https://img.shields.io/badge/Jenkins-D24939?style=flat-logo&logo=Jenkins&logoColor=white"> <img src="https://img.shields.io/badge/Argo-EF7B4D?style=flat-logo&logo=Argo&logoColor=white">
+
+#### Front-end
+
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-logo&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-logo&logo=JavaScript&logoColor=white">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-logo&logo=HTML5&logoColor=white"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-logo&logo=CSS3&logoColor=white">
+
+> React : 18.2.0 <br>
+> JavaScript : ES6
+
+#### Back-end
+<img src="https://img.shields.io/badge/Java-007396?style=flat&logo=OpenJDK&logoColor=white"/> <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-logo&logo=Spring Boot&logoColor=white"/>
+<img src="https://img.shields.io/badge/MariaDB-003545?style=flat&logo=MariaDB&logoColor=white"/> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat&logo=Redis&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat&logo=Gradle&logoColor=white"/>
+
+> Java : 17 <br>
+> MariaDB : 10.0.6 <br>
+> Spring Boot : 3.1.4 <br>
+> Redis : 2.7.5
+
+#### WebServer
+<img src="https://img.shields.io/badge/Nginx-009639?style=flat-logo&logo=NGINX&logoColor=white">
+<img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-logo&logo=Apache Tomcat&logoColor=white">
+
+
+## 아키텍처
+
+---
+
+
+##### 📌 Terraform Architecture
+![img.png](img.png)
+
+##### 📌 User Architecture
+![img_2.png](img_2.png)
+
+##### 📌 Admin Architecture
+![img_1.png](img_1.png)
+
+##### 📌 Kubernetes Architecture
+![img_3.png](img_3.png)
+
+#### 📌 CI / CD Pipeline
+![img_4.png](img_4.png)
+
+> Github에 변경된 사항이 push가 되면 Jenkins는 변경된 사항을 **소스 코드 clone을 수행**합니다. 그리고 **Gradle을 사용하여 빌드**를 진행한 후, ECR 레지스트리에 배포하기 위한 **Docker 이미지 빌드**를 수행합니다. 
+정상적으로 빌드된 Docker 이미지를 **ECR에 push**합니다. 이후에는 애플리케이션 배포 manifest File의 이미지 태그를 업데이트하는 단계를 수행합니다.<br>
+> 그리고 ArgoCD는 Git 저장소에 변경상태를 감지하며 변경된 내용을 **EKS에 배포**하여 반영합니다.
+
+## API 명세서
+
+---
+
+
+## ERD
+
+---
+
+![img_5.png](img_5.png)
+
+## 주요 기능
+
+---
+
+- 사용자
+  - Security 회원 가입 및 로그인
+  - JWT Token 인증
+  - 회원 정보 수정
+  - 회원가입 및 로그인 유효성 검사
+- 게시판
+  - 게시글 CRUD
+  - 답변 CRUD
+  - 페이지네이션
+  - 이미지 추가 
+- 레시피
+  - 레시피 추천 기능
+  - 레시피 검색 기능
+  - 레시피 상세보기 기능

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/backend/Recipe-Member" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/backend/Recipe-Notice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/backend/Recipe-Recommand" vcs="Git" />
+  </component>
+</project>
