@@ -66,19 +66,19 @@ CI/CD 파이프라인을 구축하여 장애에 대해 대비가 가능하고  �
 
 
 ##### 📌 Terraform Architecture
-![img.png](img.png)
+![img.png](images/terraform_architecture.png)
 
 ##### 📌 User Architecture
-![img_2.png](img_2.png)
+![img_2.png](images/user_architecture.png)
 
 ##### 📌 Admin Architecture
-![img_1.png](img_1.png)
+![img_1.png](images/admin_architecture.png)
 
 ##### 📌 Kubernetes Architecture
-![img_3.png](img_3.png)
+![img_3.png](images/k8s_architecture.png)
 
 #### 📌 CI / CD Pipeline
-![img_4.png](img_4.png)
+![img_4.png](images/cicd_architecture.png)
 
 > Github에 변경된 사항이 push가 되면 Jenkins는 변경된 사항을 **소스 코드 clone을 수행**합니다. 그리고 **Gradle을 사용하여 빌드**를 진행한 후, ECR 레지스트리에 배포하기 위한 **Docker 이미지 빌드**를 수행합니다. 
 정상적으로 빌드된 Docker 이미지를 **ECR에 push**합니다. 이후에는 애플리케이션 배포 manifest File의 이미지 태그를 업데이트하는 단계를 수행합니다.<br>
@@ -87,13 +87,23 @@ CI/CD 파이프라인을 구축하여 장애에 대해 대비가 가능하고  �
 ## API 명세서
 
 ---
+##### 📌 회원 API 명세서
+![](images/회원api명세서.png)
 
+##### 📌 게시글 API 명세서
+![](images/게시글 api.png)
+
+##### 📌 댓글 API 명세서
+![](images/댓글api.png)
+
+##### 📌 레시피 추천 API 명세서
+![](images/레시피api.png)
 
 ## ERD
 
 ---
 
-![img_5.png](img_5.png)
+![img_5.png](images/erd.png)
 
 ## 주요 기능
 
