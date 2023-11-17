@@ -24,7 +24,7 @@ CI/CD 파이프라인을 구축하여 장애에 대해 대비가 가능하고 �
 <img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=flat-logo&logo=amazonaws&logoColor=white"> <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=Kubernetes&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white"/> <img src="https://img.shields.io/badge/Terraform-844FBA?style=flat&logo=Terraform&logoColor=white"/> 
 
 > EC2 Image : Amazon-Linux 2023<br>
-> K8s : 2.7<br>
+> K8S : 2.7<br>
 > Terraform : 5.1.0
 
 
