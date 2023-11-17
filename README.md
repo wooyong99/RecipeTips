@@ -1,16 +1,18 @@
 # 🍳 RecipeTips
 ##### 📆 **2023.09.27** ~ **2023.11.01**
 
+---
+
 'RecipeTips'는 요리에 대한 지식이 부족하거나 배우고 싶은 1인 가족 및 자취생들이 자유롭게 소통하고, 정보를 공유할 수 있는 사이트입니다.
 
-## 프로젝트 선정 배경
+<br>
 
+## 프로젝트 선정 배경
 Pendemic 이후 외식이 어려워지고 집에서 요리하는 현상이 증가했습니다. 이에 따라 많은 사람들이 직접 요리를 하여 물가 부담을 낮추는 경향이 나타났습니다. 
 그러나 사람들은 어떠한 요리를 만들지, 어떻게 조리를 하는지에 대한 고민이 많아졌습니다. 따라서, 이러한 수요를 충족시키고 집에서 요리하는 사람들에게 도움을 주기 위해
 "RecipeTips"를 개발하기로 결정했습니다. RecipeTips는 다양한 요리 관련 정보를 제공하고 추천 요리, 조리 방법 등을 소개합니다. 
 
 ## 프로젝트 목표
-
 오늘날에는 시스템이 지속적으로 작동하고 사용 가능한 **고가용성**이 강조되고 있습니다. 
 이를 위해 **MSA** 애플리케이션을 구성하고 관리하기 위해 Kubernetes를 이용하여 인프라를 구축할 것입니다. 
 그리고 개발자들의 생산성을 높이고 개발 Process의 효율성을 극대화하기 위해 
@@ -18,7 +20,11 @@ CI/CD 파이프라인을 구축하여 장애에 대해 대비가 가능하고 �
 가능한 **무중단 배포**를 목표로 할 것입니다.
 또한 지속적이고 안정적인 서비스 운영/관리를 위해 Resource와 Application **모니터링 시스템**을 구축할 것입니다.
 
+<br>
+
 ## 사용 기술
+
+---
 
 #### Infra
 <img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=flat-logo&logo=amazonaws&logoColor=white"> <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=Kubernetes&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white"/> <img src="https://img.shields.io/badge/Terraform-844FBA?style=flat&logo=Terraform&logoColor=white"/> 
@@ -56,10 +62,13 @@ CI/CD 파이프라인을 구축하여 장애에 대해 대비가 가능하고 �
 <img src="https://img.shields.io/badge/Nginx-009639?style=flat-logo&logo=NGINX&logoColor=white">
 <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-logo&logo=Apache Tomcat&logoColor=white">
 
+<br>
+<br>
+
 
 ## 아키텍처
 
-
+---
 ##### 📌 Terraform Architecture
 ![img.png](images/terraform_architecture.png)
 
@@ -68,11 +77,15 @@ Bastion Server를 DB와 Mgmt로 구분하여 보안을 강화하였습니다.
 DB/Redis를 이중화하여 가용성을 높였습니다.
 EKS 환경에서 확장성있는 서비스를 구축하였습니다.
 
+<br>
+
 ##### 📌 User Architecture
 ![img_2.png](images/user_architecture.png)
 
 >```www.recipetips.net```
 User용 Domain을 분리하여 서비스에 접근할 수 있도록 했습니다.
+
+<br>
 
 ##### 📌 Admin Architecture
 ![img_1.png](images/admin_architecture.png)
@@ -81,10 +94,14 @@ User용 Domain을 분리하여 서비스에 접근할 수 있도록 했습니다
 admin용 Domain을 분리하여 서비스를 접근하고 관리할 수 있습니다.
 Bastion Server를 활용해 내부에 접근하고 관리할 수 있습니다.
 
+<br>
+
 ##### 📌 Kubernetes Architecture
 ![img_3.png](images/k8s_architecture.png)
 
 > 서비스별로 Namespace를 지정하고 관리합니다.
+
+<br>
 
 #### 📌 CI / CD Pipeline
 ![img_4.png](images/cicd_architecture.png)
@@ -93,28 +110,50 @@ Bastion Server를 활용해 내부에 접근하고 관리할 수 있습니다.
 정상적으로 빌드된 Docker 이미지를 **ECR에 push**합니다. 이후에는 애플리케이션 배포 manifest File의 이미지 태그를 업데이트하는 단계를 수행합니다.<br>
 > 그리고 ArgoCD는 Git 저장소에 변경상태를 감지하며 변경된 내용을 **EKS에 배포**하여 반영합니다.
 
+<br>
+
 #### 📌 Service Architecture
 
+<br>
+<br>
 
 ## API 명세서
+
+---
 
 ##### 📌 회원 API 명세서
 ![](images/회원api명세서.png)
 
+<br>
+
 ##### 📌 게시글 API 명세서
 ![](images/게시글api.png)
 
+<br>
+
 ##### 📌 댓글 API 명세서
 ![](images/댓글api.png)
+<br>
 
 ##### 📌 레시피 추천 API 명세서
 ![](images/레시피api.png)
 
+<br>
+<br>
+
 ## ERD
+
+---
 
 ![img_5.png](images/erd.png)
 
+<br>
+<br>
+
+
 ## 주요 기능
+
+---
 
 - 사용자
   - Security 회원 가입 및 로그인
@@ -132,8 +171,13 @@ Bastion Server를 활용해 내부에 접근하고 관리할 수 있습니다.
   - 레시피 상세보기 기능
 
 ## 모니터링
+
+---
+
 - Grafnana / Prometheus를 활용하여 Resource 모니터링 대시보드 구성
 - EFK Stack을 활용하여 Application 모니터링 구축
+
+<br>
 
 ### Cluster 대시보드 
 ![](images/모니터링.png)
@@ -142,6 +186,8 @@ Bastion Server를 활용해 내부에 접근하고 관리할 수 있습니다.
  - Node CPU, Memory
  - Deployment update 현황
  - Namespace 별 replicas 현황
+
+<br>
 
 ### Pod 대시보드 
 ![](images/파드.png)
