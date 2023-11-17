@@ -26,6 +26,12 @@ CI/CD 파이프라인을 구축하여 장애에 대해 대비가 가능하고 �
 
 <br>
 
+### 역할 분담
+> **서명진 (PL)** : K8S, Terraform 구성, Argo, Monitoring 구축<br>
+> **최재민** : AWS Infra 구축, 프로젝트 문서화 작성<br>
+> **조광희** : Front-end 개발, FlowChart 작성<br>
+> **정우용** : Back-end 개발, Jenkins 구축, CI/CD 파이프라인 구축, PPT 제작 
+
 ## 사용 기술
 
 #### Infra
@@ -112,30 +118,32 @@ Bastion Server를 활용해 내부에 접근하고 관리할 수 있습니다.
 > 그리고 ArgoCD는 Git 저장소에 변경상태를 감지하며 변경된 내용을 **EKS에 배포**하여 반영합니다.
 
 <br>
+<br>
 
-#### 📌 Service Architecture
+## FlowChart
+![](images/flowchart.png)
 
 <br>
 <br>
 
 ## API 명세서
 
-##### 📌 회원 API 명세서
+#### 📌 회원 API 명세서
 ![](images/회원api명세서.png)
 
 <br>
 
-##### 📌 게시글 API 명세서
+#### 📌 게시글 API 명세서
 ![](images/게시글api.png)
 
 <br>
 
-##### 📌 댓글 API 명세서
+#### 📌 댓글 API 명세서
 ![](images/댓글api.png)
 
 <br>
 
-##### 📌 레시피 추천 API 명세서
+#### 📌 레시피 추천 API 명세서
 ![](images/레시피api.png)
 
 <br>
@@ -147,7 +155,6 @@ Bastion Server를 활용해 내부에 접근하고 관리할 수 있습니다.
 
 <br>
 <br>
-
 
 ## 주요 기능
 
