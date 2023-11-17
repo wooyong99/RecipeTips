@@ -68,10 +68,6 @@ CI/CD 파이프라인을 구축하여 장애에 대해 대비가 가능하고 �
 > MariaDB : 10.0.6 <br>
 > Spring Boot : 3.1.4 <br>
 
-#### WebServer
-<img src="https://img.shields.io/badge/Nginx-009639?style=flat-logo&logo=NGINX&logoColor=white">
-<img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-logo&logo=Apache Tomcat&logoColor=white">
-
 <br>
 <br>
 
