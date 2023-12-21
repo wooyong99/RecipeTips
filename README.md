@@ -4,7 +4,8 @@
 
 <br>
 
-### 시연 영상
+### 프로젝트 보고서 및 시연 영상
+- [보고서 / PPT ](https://marble-cord-d0a.notion.site/RecipeTips-2b49fd74a5944878a6527f16a510a3ee?pvs=4)
 - [서비스 시연 영상](https://youtu.be/ZNQ98Y0HJl8)<br>
 - [HPA 시연 영상](https://youtu.be/SyfNZwBn0nM)<br>
 - [CI/CD 시연 영상](https://youtu.be/CVYgnCJHCOE)<br>
